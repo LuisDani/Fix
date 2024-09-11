@@ -17,8 +17,7 @@
             <div class="mb-4">
                 <input type="file" name="video" class="form-input mt-1 block w-full">
             </div>
-            <button type="submit" class="btn btn-primary">Publicar</button>
-        </form>
+<button type="submit" class="text-white bg-gradient-to-br from-[#666f88] to-[#b5bac9] hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Publicar</button>
 
         <div class="mt-8">
             @foreach($posts as $post)
