@@ -17,18 +17,18 @@
             <div class="mb-4">
                 <input type="file" name="video" class="form-input mt-1 block w-full">
             </div>
-<button type="submit" class="text-white bg-gradient-to-br from-[#666f88] to-[#b5bac9] hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Publicar</button>
+<button type="submit" class="text-white bg-gradient-to-br from-[#666f88] to-[#b5bac9] hover:bg-gradient-to-bl  font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Publicar</button>
 
         <div class="mt-8">
             @foreach($posts as $post)
                 <div class="border p-4 mb-4">
                     <p>{{ $post->text }}</p>
                     @if($post->image)
-                        <img src="{{ asset('storage/' . $post->image) }}" alt="Imagen" class="mt-2 max-w-full h-auto">
+                        <img src="{{ asset('storage/' . $post->image) }}" alt="Imagen" class="mt-2 w-auto h-auto">
                     @endif
                     @if($post->video)
-                        <video controls class="mt-2 max-w-full h-auto">
-                            <source src="{{ asset('videos/' . $post->video) }}" type="video/mp4">
+                        <video controls class="mt-2 w-96 h-auto">
+                            <source src="{{ asset('storage/' . $post->video) }}" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
                     @endif
@@ -37,7 +37,4 @@
             @endforeach
         </div>
     </div>
-    <a href="">IVAN</a>
-        <a href="">Dessiré2</a>
-
 </x-app-layout>
