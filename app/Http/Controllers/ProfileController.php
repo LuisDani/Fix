@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
 use App\Models\User;
+use App\Models\Post;
 
 class ProfileController extends Controller
 {
@@ -80,4 +81,16 @@ class ProfileController extends Controller
 
         return Redirect::to('/');
     }
+
+    public function show(): View
+{
+    $user = Auth::user(); // Obtén el usuario autenticado
+
+    // Obtén los posts del usuario
+    $posts = Post::where('user_id', $user->id)->get();
+
+    // Redirige a la vista personalProfile con el usuario y sus posts
+    return view('personalProfile', compact('user', 'posts'));
+}
+
 }

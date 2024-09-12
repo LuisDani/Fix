@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 .button-login-google{
     width: 100%;
     display: flex;
@@ -31,4 +30,15 @@
   
   .button-login-google:hover {
     background-color: #e7e7e7;
+  }
+
+  .button-edit{
+    transition: 0.2s;
+  }
+  .button-edit:hover{
+    background: #666f88;
+  }
+
+  .prfile-info-container{
+    background: #d0d4dd;
   }
