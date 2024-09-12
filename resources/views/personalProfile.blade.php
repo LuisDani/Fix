@@ -5,6 +5,7 @@
     <div class="prfile-info-container flex items-center justify-between px-24 h-40 rounded-lg">
         <div class="flex items-center gap-4">
                
+        
         @if($user->profile_image)
             <img src="{{ asset('storage/' . $user->profile_image) }}" alt="Profile Image" class="w-24 h-24 rounded-full object-cover">
         @else
