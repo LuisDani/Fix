@@ -1,9 +1,5 @@
 <x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Fix') }}
-        </h2>
-    </x-slot>
+    
 
     <div class="container mx-auto mt-4">
         <form action="{{ route('posts.store') }}" method="POST" enctype="multipart/form-data">
@@ -19,9 +15,9 @@
             </div>
 <button type="submit" class="text-white bg-gradient-to-br from-[#666f88] to-[#b5bac9] hover:bg-gradient-to-bl  font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Publicar</button>
 
-        <div class="mt-8">
+        <div class="mt-8 w-3/4 ">
             @foreach($posts as $post)
-                <div class="border p-4 mb-4">
+                <div class="border p-4 mb-4 flex-col justify-center">
                     <div class="flex gap-2 w-auto">
                         @if($post->user->profile_image)
                             <img src="{{ asset('storage/' . $post->user->profile_image) }}" alt="Profile Image" class="w-10 h-10 rounded-full object-cover">
