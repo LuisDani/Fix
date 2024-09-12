@@ -7,8 +7,14 @@
 
         <link rel="icon" href="{{ asset('logo.png') }}" type="image/png">
 
-        <title>{{ config('app.name', 'Laravel') }}</title>
-
+    <title>
+        @hasSection('title')
+            @yield('title') - {{ config('app.name') }}
+        @else
+            {{ Route::currentRouteName() }} - {{ config('app.name') }}
+        @endif
+    </title>
+    
        <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=poppins:400,500,600&display=swap" rel="stylesheet" />

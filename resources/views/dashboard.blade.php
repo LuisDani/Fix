@@ -1,6 +1,9 @@
 <x-app-layout>
     
 
+@section('title', 'Página de Inicio')
+
+
     <div class="container mx-auto mt-10">
         <form action="{{ route('posts.store') }}" method="POST" enctype="multipart/form-data">
             @csrf

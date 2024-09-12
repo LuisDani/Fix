@@ -1,8 +1,10 @@
 <x-app-layout>
+@section('title', 'Perfil')
+
 
 <div class="container mx-auto mt-4">
     
-    <div class="prfile-info-container flex items-center justify-between px-24 h-40 rounded-lg">
+    <div class="prfile-info-container ">
         <div class="flex items-center gap-4">
                
         

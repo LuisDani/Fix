@@ -40,5 +40,24 @@
   }
 
   .prfile-info-container{
-    background: #d0d4dd;
+    background: #dfe2e9;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 1.5rem;
+    border-radius: 15px;
+  }
+
+  .prfile-info-container::before{
+    content: 'Editar Perfil';
+  }
+
+  @media (max-width: 600px){
+    .prfile-info-container{
+      align-items: center;
+
+    }
+    .prfile-info-container::before{
+      content: '.';
+    }
   }
