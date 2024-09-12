@@ -1,7 +1,7 @@
 <x-app-layout>
     
 
-    <div class="container mx-auto mt-4">
+    <div class="container mx-auto mt-10">
         <form action="{{ route('posts.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="mb-4">
@@ -13,7 +13,7 @@
             <div class="mb-4">
                 <input type="file" name="video" class="form-input mt-1 block w-full">
             </div>
-<button type="submit" class="text-white bg-gradient-to-br from-[#666f88] to-[#b5bac9] hover:bg-gradient-to-bl  font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Publicar</button>
+<button type="submit" class="text-white bg-gradient-to-r from-slate-400 via-slate-500 to-slate-600 hover:bg-gradient-to-br focus:ring-2 focus:outline-none focus:ring-slate-500 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 ">Publicar</button>
 
         <div class="mt-8 w-3/4 ">
             @foreach($posts as $post)

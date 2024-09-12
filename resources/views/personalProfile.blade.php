@@ -1,6 +1,6 @@
 <x-app-layout>
 
-<div class="container mx-auto mt-8">
+<div class="container mx-auto mt-4">
     
     <div class="prfile-info-container flex items-center justify-between px-24 h-40 rounded-lg">
         <div class="flex items-center gap-4">
@@ -19,7 +19,7 @@
         <div>
             <h2 class="text-2xl font-bold">{{ $user->name }}</h2>
             @if($user->biography)
-                <p class="text-gray-600 mt-2">{{ $user->biography }}</p>
+                <p class="text-gray-600 mt-2 font-normal">{{ $user->biography }}</p>
             @else
                 <p class="text-gray-600 mt-2">No has agregado una biografía aún.</p>
             @endif
@@ -27,9 +27,11 @@
         </div>
 
         <div>
-            <a class="border p-4 bg-black text-white rounded-lg button-edit" href="{{route('profile.edit')}}">Editar perfil</a>
+            <a class="text-white bg-gradient-to-r from-slate-400 via-slate-500 to-slate-600 hover:bg-gradient-to-br focus:ring-2 focus:outline-none focus:ring-slate-500 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 button-edit" href="{{route('profile.edit')}}">Editar perfil</a>
+
         </div>
         
+
     </div>
     </div>
 
@@ -43,7 +45,7 @@
                     <!-- Mostrar la imagen de perfil del usuario y su nombre -->
                     <div class="flex items-center gap-2 mb-2">
                         <img src="{{ asset('storage/' . $user->profile_image) }}" alt="Profile Image" class="w-8 h-8 rounded-full object-cover">
-                        <p class="text-sm"> {{ $user->name }}</p>
+                        <p class="text-sm font-semibold"> {{ $user->name }}</p>
                     </div>
 
                     <!-- Texto del post -->
