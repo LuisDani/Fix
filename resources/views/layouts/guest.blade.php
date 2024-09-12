@@ -18,11 +18,11 @@
     </head>
     <body class="font-sans text-gray-900 antialiased">
 
-    <nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
+    <nav x-data="{ open: false }" class="bg-white border-b-2 border-gray-200 py-6">
     <!-- Primary Navigation Menu -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl  mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
-            <div class="flex justify-between w-full">
+            <div class="flex justify-between items-center w-full">
 
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
@@ -32,7 +32,7 @@
                 </div>
 
                 <!-- Navigation Links -->
-                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                <div class="space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link :href="route('login')" :active="request()->routeIs('login')">
                         {{ __('Iniciar Sesión') }}
                     </x-nav-link>
@@ -43,11 +43,12 @@
             </div>
         </div>
     </div>
+</nav>
 
             
-        <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100">
-            <div>
-                <h1 class="font-bold text-2xl">Bienvenido a FIX</h1>
+        <div class="flex flex-col items-center sm:justify-center sm:pt-0 bg-white">
+            <div class="mt-10">
+                <h1 class="font-bold mt-20 text-2xl">Bienvenido a FIX</h1>
             </div>
 
             <div class="w-full sm:max-w-md mt-6 px-6 py-4 bg-white shadow-md overflow-hidden sm:rounded-lg">
