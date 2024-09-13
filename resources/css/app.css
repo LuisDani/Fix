@@ -48,16 +48,3 @@
     border-radius: 15px;
   }
 
-  .prfile-info-container::before{
-    content: 'Editar Perfil';
-  }
-
-  @media (max-width: 600px){
-    .prfile-info-container{
-      align-items: center;
-
-    }
-    .prfile-info-container::before{
-      content: '.';
-    }
-  }
