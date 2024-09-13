@@ -18,7 +18,7 @@
     </head>
     <body class="font-sans text-gray-900 antialiased">
 
-    <nav x-data="{ open: false }" class="bg-white border-b-2 border-gray-200 py-6">
+    <nav x-data="{ open: false }" class="bg-white border-b-2 border-gray-200 py-3">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl  mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
@@ -47,7 +47,7 @@
 
             
         <div class="flex flex-col items-center sm:justify-center sm:pt-0 bg-white">
-            <div class="mt-10">
+            <div class="">
                 <h1 class="font-bold mt-20 text-2xl">Bienvenido a FIX</h1>
             </div>
 
@@ -55,5 +55,8 @@
                 {{ $slot }}
             </div>
         </div>
+
+
+
     </body>
 </html>
