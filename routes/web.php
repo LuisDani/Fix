@@ -19,6 +19,7 @@ Route::middleware('auth', 'verified')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     Route::get('/profile/show', [ProfileController::class, 'show'])->name('profile.show');
+    route::get('/users/{user}', [ProfileController::class, 'showUserProfile'])->name('users.profile');
     Route::get('/dashboard', [PostController::class, 'index'])->name('dashboard');
     Route::post('/posts', [PostController::class, 'store'])->name('posts.store');
 

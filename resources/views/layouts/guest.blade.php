@@ -16,9 +16,9 @@
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
-    <body class="font-sans text-gray-900 antialiased">
+    <body class="font-sans text-gray-900 antialiased overflow-hidden">
 
-    <nav x-data="{ open: false }" class="bg-white border-b-2 border-gray-200 py-6">
+    <nav x-data="{ open: false }" class="bg-white border-b-2 border-gray-200 py-3">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl  mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
@@ -46,14 +46,28 @@
 </nav>
 
             
-        <div class="flex flex-col items-center sm:justify-center sm:pt-0 bg-white">
-            <div class="mt-10">
-                <h1 class="font-bold mt-20 text-2xl">Bienvenido a FIX</h1>
-            </div>
+<div class="relative flex flex-col items-center sm:pt-0 h-screen">
 
-            <div class="w-full sm:max-w-md mt-6 px-6 py-4 bg-white shadow-md overflow-hidden sm:rounded-lg">
-                {{ $slot }}
-            </div>
-        </div>
+    <!-- Video de fondo -->
+    <video autoplay muted loop class="absolute video-login inset-0 z-0 w-full h-full object-cover">
+        <source src="{{ asset('videofondoo.mp4') }}" type="video/mp4">
+        Tu navegador no soporta el video.
+    </video>
+
+    <!-- Contenido del sitio (colocado encima del video) -->
+     <div class="relative z-10 mt-6">
+        <h1 class="font-black text-4xl text-extrabold tracking-wide">Bienvenido a FIX</h1>
+    </div> 
+
+    <!-- Contenido adicional -->
+    <div class="relative z-10 w-full sm:max-w-md mt-4 px-6 py-4 bg-white bg-opacity-5 backdrop-blur-md shadow-md overflow-hidden sm:rounded-lg">
+    {{ $slot }}
+    </div>
+
+</div>
+
+
+
+
     </body>
 </html>

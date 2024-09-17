@@ -93,4 +93,17 @@ class ProfileController extends Controller
     return view('personalProfile', compact('user', 'posts'));
 }
 
+
+public function showUserProfile(User $user)
+{
+    // Obtener los posts del usuario
+    $posts = Post::where('user_id', $user->id)->get();
+
+    // Retornar la vista del perfil del usuario con sus posts
+    return view('profile.userProfile', [
+        'user' => $user,
+        'posts' => $posts,
+    ]);
+}
+
 }
