@@ -18,7 +18,7 @@ class ProfileUpdateRequest extends FormRequest
         return [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'lowercase', 'email', 'max:255', Rule::unique(User::class)->ignore($this->user()->id)],
-            'biography' => ['nullable', 'string', 'max:1000'], // Máximo de 1000 caracteres para la biografía
+            'biography' => ['nullable', 'string', 'max:100'], // Máximo de 1000 caracteres para la biografía
             'profile_image' => ['nullable', 'image', 'mimes:jpg,jpeg,png', 'max:2048'], // Validación para imágenes
         ];
     }

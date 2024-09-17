@@ -39,6 +39,18 @@
     background: #666f88;
   }
 
-  .prfile-info-container{
-    background: #d0d4dd;
+@media only screen and (max-width: 600px){
+  .post-container{
+    width:90vw;
   }
+  .profile-container{
+    flex-direction: column;
+  }
+  .left-container{
+    flex-direction: column;
+    text-align: center;
+  }
+  .edit-button-container{
+    margin-top: 1rem;
+  }
+}
