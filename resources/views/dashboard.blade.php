@@ -1,7 +1,7 @@
 <x-app-layout>
     @section('title', 'Página de Inicio')
 
-    <div class="container mx-auto mt-10">
+    <div class="container mx-auto mt-10 ">
         <form action="{{ route('posts.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="mb-4">
@@ -16,12 +16,12 @@
             <button type="submit" class="text-white bg-gradient-to-r from-slate-400 via-slate-500 to-slate-600 hover:bg-gradient-to-br focus:ring-2 focus:outline-none focus:ring-slate-500 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Publicar</button>
         </form>
 
-        <div class="mt-8 w-3/4">
+        <div class="mt-8 w-full">
             @foreach($posts as $post)
-                <div class="border p-4 mb-4 flex-col justify-center relative">
+                <div class="border p-4 mb-4 flex-col justify-center relative bg-white p-6 shadow-md">
                     <!-- Botón de eliminar solo para posts del usuario autenticado -->
                     @if($post->user_id === auth()->id())
-                        <form action="{{ route('posts.destroy', $post->id) }}" method="POST" class="absolute top-2 right-2">
+                        <form action="{{ route('posts.destroy', $post->id) }}" method="POST" class="absolute top-2 right-5">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="text-gray-500 hover:text-gray-700">
@@ -39,11 +39,11 @@
                                 <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"></path>
                             </svg>
                         @endif
-                        <a href="{{ $post->user_id === auth()->id() ? route('profile.show') : route('users.profile', $post->user->id) }}" class="text-sm mt-2 text-blue-500 hover:underline">{{ $post->user->name }}</a>
+                        <a href="{{ $post->user_id === auth()->id() ? route('profile.show') : route('users.profile', $post->user->id) }}" class="text-sm mt-2 text-black no-underline">{{ $post->user->name }}</a>
                     </div>
 
                     <!-- Fecha de creación del post -->
-                    <div class="absolute right-7 top-2 text-sm text-gray-500">
+                    <div class="absolute right-10 top-2 text-sm text-gray-500">
                         {{ $post->created_at->diffForHumans() }}
                     </div>
 
