@@ -49,4 +49,35 @@ class PostController extends Controller
 
         return redirect()->route('dashboard')->with('success', 'Post creado exitosamente.');
     }
+
+
+    public function destroy($id)
+{
+    $post = Post::findOrFail($id);
+
+    // Verifica si el post pertenece al usuario autenticado
+    if ($post->user_id !== auth()->id()) {
+        return redirect()->route('dashboard')->with('error', 'No tienes permiso para eliminar este post.');
+    }
+
+    // Elimina los archivos asociados si existen
+    if ($post->image) {
+        Storage::delete('public/' . $post->image);
+    }
+    if ($post->video) {
+        Storage::delete('public/' . $post->video);
+    }
+
+    // Elimina el post
+    $post->delete();
+
+    // Redirige al dashboard si la solicitud proviene de allí
+    if (request()->routeIs('dashboard')) {
+        return redirect()->route('dashboard')->with('success', 'Post eliminado exitosamente.');
+    }
+
+    // Redirige al perfil si la solicitud proviene de allí
+    return redirect()->route('profile.show', auth()->user()->id)->with('success', 'Post eliminado exitosamente.');
+}
+
 }

@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GoogleController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\LikeController;
 
 
 Route::get('/', function () {
@@ -22,6 +23,9 @@ Route::middleware('auth', 'verified')->group(function () {
     route::get('/users/{user}', [ProfileController::class, 'showUserProfile'])->name('users.profile');
     Route::get('/dashboard', [PostController::class, 'index'])->name('dashboard');
     Route::post('/posts', [PostController::class, 'store'])->name('posts.store');
+    Route::post('/posts/{post}/like', [LikeController::class, 'like'])->name('posts.like');
+    Route::post('/posts/{post}/unlike', [LikeController::class, 'unlike'])->name('posts.unlike');
+    Route::delete('/posts/{post}', [PostController::class, 'destroy'])->name('posts.destroy');
 
     
 });

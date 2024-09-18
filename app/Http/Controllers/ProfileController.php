@@ -100,7 +100,7 @@ public function showUserProfile(User $user)
     $posts = Post::where('user_id', $user->id)->get();
 
     // Retornar la vista del perfil del usuario con sus posts
-    return view('profile.userProfile', [
+    return view('userProfile', [
         'user' => $user,
         'posts' => $posts,
     ]);
