@@ -17,8 +17,8 @@
                     </x-nav-link>
                 </div>
             </div>
-            <button id="open-modal" class="bg-slate-700 text-white h-3/4 p-3 rounded-md hover:bg-slate-600 ">
-                Crear publicación
+            <button id="open-modal" alt="Crear publicación" class="bg-slate-700 text-white h-12 w-12 p-3 rounded-3xl hover:bg-slate-500 ">
+                +
             </button>
             <!-- Settings Dropdown -->
 <div class="hidden sm:flex sm:items-center sm:ms-6">
