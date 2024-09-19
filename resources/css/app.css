@@ -99,7 +99,7 @@ opacity: 0; /* Return to opacity 0 at 100% */
 /* Add this media query to the existing CSS code */
 @media only screen and (max-width: 844px) {
 /* Hide the video container and navigation menu on mobile screens */
-.video-container, nav {
+.video-container {
 display: none;
 }
 
@@ -218,3 +218,4 @@ width: 100%; /* Take up the full width on mobile screens */
   }
   
 }
+
