@@ -86,18 +86,23 @@ class ProfileController extends Controller
 {
     $user = Auth::user(); // Obtén el usuario autenticado
 
-    // Obtén los posts del usuario
-    $posts = Post::where('user_id', $user->id)->get();
+    // Obtén los posts del usuario, ordenados del más reciente al más antiguo
+    $posts = Post::where('user_id', $user->id)
+        ->orderBy('created_at', 'desc') // Ordenar por fecha de creación en orden descendente
+        ->get();
 
     // Redirige a la vista personalProfile con el usuario y sus posts
     return view('personalProfile', compact('user', 'posts'));
 }
 
 
+
 public function showUserProfile(User $user)
 {
-    // Obtener los posts del usuario
-    $posts = Post::where('user_id', $user->id)->get();
+    // Obtener los posts del usuario, ordenados del más reciente al más antiguo
+    $posts = Post::where('user_id', $user->id)
+        ->orderBy('created_at', 'desc') // Ordenar por fecha de creación en orden descendente
+        ->get();
 
     // Retornar la vista del perfil del usuario con sus posts
     return view('userProfile', [
@@ -105,5 +110,6 @@ public function showUserProfile(User $user)
         'posts' => $posts,
     ]);
 }
+
 
 }

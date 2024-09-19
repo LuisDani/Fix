@@ -20,7 +20,7 @@ class PostController extends Controller
         $request->validate([
             'text' => 'nullable|string',
             'image' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
-            'video' => 'nullable|mimes:mp4,avi,mov|max:40000',
+            'video' => 'nullable|mimes:mp4,avi,mov|max:50000',
         ]);
 
         if (!$request->filled('text') && !$request->hasFile('image') && !$request->hasFile('video')) {
@@ -52,32 +52,31 @@ class PostController extends Controller
 
 
     public function destroy($id)
-{
-    $post = Post::findOrFail($id);
-
-    // Verifica si el post pertenece al usuario autenticado
-    if ($post->user_id !== auth()->id()) {
-        return redirect()->route('dashboard')->with('error', 'No tienes permiso para eliminar este post.');
+    {
+        $post = Post::findOrFail($id);
+    
+        if ($post->user_id !== auth()->id()) {
+            return redirect()->route('dashboard')->with('error', 'No tienes permiso para eliminar este post.');
+        }
+    
+        if ($post->image) {
+            Storage::delete('public/' . $post->image);
+        }
+        if ($post->video) {
+            Storage::delete('public/' . $post->video);
+        }
+    
+        $post->delete();
+    
+        // Detectar la página de origen
+        $previousUrl = url()->previous();
+        if (str_contains($previousUrl, 'dashboard')) {
+            return redirect()->route('dashboard')->with('success', 'Post eliminado exitosamente.');
+        }
+    
+        return redirect()->route('profile.show', auth()->user()->id)->with('success', 'Post eliminado exitosamente.');
     }
+    
 
-    // Elimina los archivos asociados si existen
-    if ($post->image) {
-        Storage::delete('public/' . $post->image);
-    }
-    if ($post->video) {
-        Storage::delete('public/' . $post->video);
-    }
-
-    // Elimina el post
-    $post->delete();
-
-    // Redirige al dashboard si la solicitud proviene de allí
-    if (request()->routeIs('dashboard')) {
-        return redirect()->route('dashboard')->with('success', 'Post eliminado exitosamente.');
-    }
-
-    // Redirige al perfil si la solicitud proviene de allí
-    return redirect()->route('profile.show', auth()->user()->id)->with('success', 'Post eliminado exitosamente.');
-}
 
 }

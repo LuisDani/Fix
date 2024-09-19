@@ -195,6 +195,16 @@ width: 100%; /* Take up the full width on mobile screens */
     margin-top: 1rem;
     
   }
+  #open-modal{
+    height: 25%;
+    font-size: 0.7rem;
+    margin: 0;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
 }
 
 .bienv-font{

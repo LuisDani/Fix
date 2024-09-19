@@ -1,7 +1,7 @@
 <nav x-data="{ open: false }" class="bg-white border-b border-gray-100 py-3 shadow-md">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
-        <div class="flex justify-between h-16">
+        <div class="flex justify-between h-16 items-center header-content">
             <div class="flex">
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
@@ -17,7 +17,9 @@
                     </x-nav-link>
                 </div>
             </div>
-
+            <button id="open-modal" class="bg-slate-700 text-white h-3/4 p-3 rounded-md hover:bg-slate-600 ">
+                Crear publicación
+            </button>
             <!-- Settings Dropdown -->
 <div class="hidden sm:flex sm:items-center sm:ms-6">
     <x-dropdown align="right" width="48">
@@ -63,6 +65,7 @@
                     </svg>
                 </button>
             </div>
+
         </div>
     </div>
 
