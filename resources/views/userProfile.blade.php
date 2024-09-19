@@ -30,7 +30,7 @@
 
             @if($posts->count())
                 @foreach($posts as $post)
-                    <div class="border-2 border-gray-200 p-4 mb-4 post-container w-1/2 relative">
+                    <div class="border-2 border-gray-200 p-4 mb-4 post-container w-50 h-30 relative">
                         <!-- Mostrar la imagen de perfil del usuario y su nombre -->
                         <div class="flex items-center gap-2 mb-2">
                             @if($user->profile_image)

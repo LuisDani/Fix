@@ -42,43 +42,56 @@
             </main>
         </div>
 
-        <!-- Modal para crear publicaciones -->
-        <div id="modal" class="fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center items-center hidden">
-            <div class="bg-white p-6 rounded-lg shadow-lg w-11/12 max-w-lg">
-                <h2 class="text-xl font-bold mb-4">Crear Publicación</h2>
-                <form action="{{ route('posts.store') }}" method="POST" enctype="multipart/form-data">
-                    @csrf
-                    <div class="mb-4">
-                        <textarea name="text" class="form-textarea mt-1 block w-full" placeholder="Escribe algo..."></textarea>
-                    </div>
-
-                    <!-- Input para imagen con vista previa -->
-                    <div class="mb-4">
-                        <label for="image">Imagen</label>
-                        <input type="file" id="image" name="image" class="form-input mt-1 block w-full" accept="image/*">
-                        <div id="image-preview" class="mt-2"></div>
-                        <button type="button" id="remove-image" class="bg-red-500 text-white px-2 py-1 mt-2 rounded-lg hidden">Quitar Imagen</button>
-                    </div>
-
-                    <!-- Input para video con vista previa -->
-                    <div class="mb-4">
-                        <label for="video">Video</label>
-                        <input type="file" id="video" name="video" class="form-input mt-1 block w-full" accept="video/*">
-                        <div id="video-preview" class="mt-2"></div>
-                        <button type="button" id="remove-video" class="bg-red-500 text-white px-2 py-1 mt-2 rounded-lg hidden">Quitar Video</button>
-                    </div>
-
-                    <div class="flex justify-end">
-                        <button type="button" id="close-modal" class="mr-4 bg-gray-500 text-white px-4 py-2 rounded-lg hover:bg-gray-600">
-                            Cancelar
-                        </button>
-                        <button type="submit" class="bg-slate-500 text-white px-4 py-2 rounded-lg hover:bg-slate-600">
-                            Publicar
-                        </button>
-                    </div>
-                </form>
+     <!-- Modal para crear publicaciones -->
+<div id="modal" class="fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center items-center hidden">
+    <div class="bg-white p-6 rounded-lg shadow-lg w-11/12 max-w-lg">
+        <h2 class="text-lg font-bold mb-4">Crear Publicación</h2>
+        <form action="{{ route('posts.store') }}" method="POST" enctype="multipart/form-data">
+            @csrf
+            <div class="mb-4">
+                <textarea name="text" class="form-textarea mt-1 block w-full" placeholder="Escribe algo..."></textarea>
             </div>
-        </div>
+
+            <br>
+
+            <!-- Input para imagen con vista previa -->
+            <div class="mb-4">
+                <button type="button" onclick="document.getElementById('image').click()" class="bg-gray-200 text-gray-600 px-4 py-2 rounded-lg hover:bg-gray-300">
+                    <i class="fas fa-image mr-2"></i> Subir Imagen
+                </button>
+                <input type="file" id="image" name="image" class="hidden" accept="image/*" onchange="previewImage(this)">
+                <div id="image-preview" class="mt-2 border border-white rounded-lg p-2">
+                    <img id="image-preview-img" class="w-full h-auto" />
+                </div>
+            <button type="button" id="remove-image" class="bg-red-500 text-white px-2 py-1 mt-2 rounded-lg hidden" onclick="removeImage()">
+    <i class="fas fa-trash-alt mr-2"></i> Quitar Imagen
+</button>  
+            </div>
+
+            <!-- Input para video con vista previa -->
+            <div class="mb-4">
+                <button type="button" onclick="document.getElementById('video').click()" class="bg-gray-200 text-gray-600 px-4 py-2 rounded-lg hover:bg-gray-300">
+                    <i class="fas fa-video mr-2"></i> Subir Video
+                </button>
+                <input type="file" id="video" name="video" class="hidden" accept="video/*" onchange="previewVideo(this)">
+                <div id="video-preview" class="mt-2 border border-white rounded-lg p-2">
+                </div>
+<button type="button" id="remove-video" class="bg-red-500 text-white px-2 py-1 mt-2 rounded-lg hidden" onclick="removeVideo()">
+    <i class="fas fa-trash-alt mr-2"></i> Quitar Video
+</button>            
+</div>
+
+            <div class="flex justify-end">
+                <button type="button" id="close-modal" class="mr-4 bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600">
+                    <i class="fas fa-times mr-2"></i> Cancelar
+                </button>
+                <button type="submit" class="bg-gray-200 text-gray-600 px-4 py-2 rounded-lg hover:bg-gray-300">
+                    Publicar
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
 
         <!-- Script para vista previa y quitar archivos -->
         <script>
