@@ -2,6 +2,147 @@
 @tailwind components;
 @tailwind utilities;
 
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+.container {
+  display: flex;
+  height: 100vh; /* La altura ocupará toda la pantalla */
+}
+.video-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.video-container video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.content-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100px;
+}
+.content-container img {
+  width: 30%; /* Ajusta el tamaño de la imagen */
+  margin-bottom: 10px;
+  margin-top: 50px;
+}
+.content-container h1 {
+  font-size: 40px;
+  margin-bottom: 10px;
+  font-weight: bold;
+  
+}
+.content-container p {
+  font-size: 22px;
+  margin-bottom: 10px;
+
+}
+
+/* Add the login and register buttons */
+.login-register-btns {
+display: flex;
+flex-direction: column;
+align-items: center;
+margin-bottom: 10px;
+margin-top: 20px;
+}
+
+.login-register-btns button {
+
+border-radius: 6px;
+border-radius: black;
+width: 100%; /* Take up the full width on mobile screens */
+}
+
+.typing-animation {
+overflow: hidden; /* Hide the text initially */
+white-space: nowrap; /* Keep the text on a single line */
+border-right: 3px solid #000; /* Add a cursor effect */
+animation: typing 4s steps(30) infinite; /* Define the animation */
+}
+
+@keyframes typing {
+0% {
+width: 0; /* Start with no text visible */
+}
+100% {
+width: 100%; /* Show the entire text */
+}
+}
+
+.fade-in-out {
+opacity: 0; /* Initial opacity is 0 */
+animation: fadeInOut 4s infinite; /* Define the animation */
+}
+
+@keyframes fadeInOut {
+0% {
+opacity: 0; /* Start with opacity 0 */
+}
+50% {
+opacity: 1; /* Reach opacity 1 at 50% */
+}
+100% {
+opacity: 0; /* Return to opacity 0 at 100% */
+}
+}
+
+/* Add this media query to the existing CSS code */
+@media only screen and (max-width: 844px) {
+/* Hide the video container and navigation menu on mobile screens */
+.video-container {
+display: none;
+}
+
+/* Center the image, heading, and paragraph on mobile screens */
+.content-container {
+flex-direction: column;
+align-items: center;
+text-align: center;
+width: 100%; /* Take up the full width on mobile screens */
+}
+
+/* Add the login and register buttons below the content */
+.content-container {
+margin-bottom: 20px; /* Add some space for the buttons */
+}
+
+/* Add the login and register buttons */
+.login-register-btns {
+display: flex;
+flex-direction: column;
+align-items: center;
+margin-bottom: 20px;
+margin-top: 50px;
+}
+
+.login-register-btns button {
+
+border-radius: 6px;
+border-radius: black;
+width: 100%; /* Take up the full width on mobile screens */
+}
+.content-container h1 {
+  font-size: 30px;
+  margin-bottom: 5px;
+  font-weight: bold;
+  
+}
+.content-container p {
+  font-size: 20px;
+  margin-bottom: 2px;
+}
+}
+
 .button-login-google{
     width: 100%;
     display: flex;
@@ -65,3 +206,16 @@
   }
 
 }
+
+.bienv-font{
+  font-weight: bold; 
+  font-size: 3rem;
+  color: #212529;
+  font-family:Arial, Helvetica, sans-serif;
+
+  @media only screen and (max-width: 600px){
+    font-size: 2rem;
+  }
+  
+}
+

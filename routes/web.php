@@ -8,7 +8,7 @@ use App\Http\Controllers\LikeController;
 
 
 Route::get('/', function () {
-    return redirect()->route('login');
+    return view('welcome');
 });
 
 Route::get('/dashboard', function () {

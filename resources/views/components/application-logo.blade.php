@@ -1,1 +1,1 @@
-<img src="{{ asset('fix.webp') }}" alt ="Logo de la aplicación" class ="h-20 w-20">
+<img src="{{ asset('fixrm.webp') }}" alt ="Logo de la aplicación" class ="h-16 w-16">

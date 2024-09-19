@@ -23,8 +23,12 @@
         </div>
     </div>
     <div class="edit-button-container">
-        <a class="text-white bg-slate-600 hover:bg-slate-400 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 button-edit" href="{{ route('profile.edit') }}">Editar perfil</a>
-    </div>
+
+    <a href="{{ route('profile.edit') }}" class="text-white bg-gradient-to-r from-slate-500 via-slate-600 to-slate-700 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-slate-100 dark:focus:ring-slate-400 font-normal rounded-3xl text-sm px-5 py-2.5 text-center me-2 mb-2">
+  <i class="fas fa-pencil-alt"></i>
+</a>
+
+</div>
 </div>
 
 <div class="container mx-auto">

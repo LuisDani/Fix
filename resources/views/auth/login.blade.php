@@ -24,18 +24,22 @@
             <x-input-error :messages="$errors->get('password')" class="mt-2" />
         </div>
 
-        <!-- Remember Me -->
-        <div class="flex mt-4 justify-between">
-            <label for="remember_me" class="inline-flex items-center">
-                <input id="remember_me" type="checkbox" class="rounded border-gray-300 text-indigo-600 shadow-sm focus:ring-indigo-500" name="remember">
-                <span class="ms-2 text-sm text-gray-600">{{ __('Recordar contraseña') }}</span>
-            </label>
-            @if (Route::has('password.request'))
-                <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('password.request') }}">
-                    {{ __('Olvidaste tu contraseña?') }}
-                </a>
-            @endif
-        </div>
+       <!-- Remember Me -->
+<div class="flex mt-4 justify-between">
+    <label for="remember_me" class="inline-flex items-center">
+        <input id="remember_me" type="checkbox" class="rounded border-gray-300 text-indigo-600 shadow-sm focus:ring-indigo-500" name="remember">
+        <span class="ms-2 text-sm text-gray-600">{{ __('Recordar contraseña') }}</span>
+    </label>
+</div>
+
+<!-- Forgot Password -->
+<div class="mt-2">
+    @if (Route::has('password.request'))
+        <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('password.request') }}">
+            {{ __('Olvidaste tu contraseña?') }}
+        </a>
+    @endif
+</div>
 
         <div class="flex items-center justify-center mt-4">
             
