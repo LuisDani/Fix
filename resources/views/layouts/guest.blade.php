@@ -16,9 +16,9 @@
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
-    <body class="font-sans text-gray-900 antialiased overflow-hidden">
+    <body class=" relative font-sans text-gray-900 antialiased overflow-hidden">
 
-    <nav x-data="{ open: false }" class="bg-white border-b-2 border-gray-200 py-3">
+    <nav x-data="{ open: false }" class="bg-transparent border-b-2 border-gray-200 py-3 z-10">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl  mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
@@ -54,13 +54,9 @@
         Tu navegador no soporta el video.
     </video>
 
-    <!-- Contenido del sitio (colocado encima del video) -->
-     <div class="relative z-10 mt-6">
-        <h1 class="font-black text-4xl text-extrabold tracking-wide">Bienvenido a FIX</h1>
-    </div> 
-
+    
     <!-- Contenido adicional -->
-    <div class="relative z-10 w-full sm:max-w-md mt-4 px-6 py-4 bg-white bg-opacity-5 backdrop-blur-md shadow-md overflow-hidden sm:rounded-lg">
+    <div class="relative w-full sm:max-w-md mt-10 px-6 py-4 bg-white bg-opacity-40 backdrop-blur-md shadow-md overflow-hidden sm:rounded-lg">
     {{ $slot }}
     </div>
 
