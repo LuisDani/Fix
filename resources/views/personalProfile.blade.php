@@ -81,9 +81,9 @@
                     <div class="flex items-center mt-2">
                         <button class="like-button" data-post-id="{{ $post->id }}">
                             @if($post->isLikedBy(auth()->user()))
-                                <i class="fa-solid fa-heart text-gray-500"></i>
+                                <i class="fa-solid fa-heart text-gray-500" style="font-size: 1.2rem;"></i>
                             @else
-                                <i class="fa-regular fa-heart"></i>
+                                <i class="fa-regular fa-heart" style="font-size: 1.2rem;"></i>
                             @endif
                         </button>
                         <span class="ml-2 likes-count">{{ $post->likes->count() }}</span>

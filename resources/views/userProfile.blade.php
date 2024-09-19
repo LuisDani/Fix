@@ -63,7 +63,7 @@
                         <!-- Información de likes -->
                         <div class="flex items-center gap-2 mt-2">
                         <button class="like-button" data-post-id="{{ $post->id }}">
-                            <i class="fa{{ $post->isLikedBy(auth()->user()) ? 's' : 'r' }} fa-heart text-gray-500"></i>
+                            <i class="fa{{ $post->isLikedBy(auth()->user()) ? 's' : 'r' }} fa-heart text-gray-500" style="font-size: 1.2rem;"></i>
                         </button>
                             <span class="likes-count">{{ $post->likes_count }}</span>
                             <span class="text-gray-500 text-xs ml-4">{{ $post->created_at->diffForHumans() }}</span>

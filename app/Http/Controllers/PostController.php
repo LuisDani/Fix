@@ -20,7 +20,7 @@ class PostController extends Controller
         $request->validate([
             'text' => 'nullable|string',
             'image' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
-            'video' => 'nullable|mimes:mp4,avi,mov|max:40000',
+            'video' => 'nullable|mimes:mp4,avi,mov|max:50000',
         ]);
 
         if (!$request->filled('text') && !$request->hasFile('image') && !$request->hasFile('video')) {
