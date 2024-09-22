@@ -1,7 +1,7 @@
 <x-app-layout>
     @section('title', 'Perfil de ' . $user->name)
 
-    <div class="container mx-auto mt-4">
+    <div class="container mx-auto mt-4 flex flex-col">
         <!-- Información del perfil -->
         <div class="profile-info-container flex py-6 px-5 rounded-lg" style="background: #dfe2e9;">
             <div class="flex items-center gap-4">
@@ -30,7 +30,7 @@
 
             @if($posts->count())
                 @foreach($posts as $post)
-                    <div class="border-2 border-gray-200 p-4 mb-4 post-container w-50 h-30 relative">
+                    <div class="border-2 border-gray-200 p-4 mb-4 post-container w-1/2 h-auto relative post-users">
                         <!-- Mostrar la imagen de perfil del usuario y su nombre -->
                         <div class="flex items-center gap-2 mb-2">
                             @if($user->profile_image)

@@ -181,9 +181,7 @@ width: 100%; /* Take up the full width on mobile screens */
   }
 
 @media only screen and (max-width: 600px){
-  .post-container{
-    width:90vw;
-  }
+  
   .profile-container{
     flex-direction: column;
   }
@@ -204,6 +202,16 @@ width: 100%; /* Take up the full width on mobile screens */
     justify-content: center;
     align-items: center;
   }
+.image-post{
+  width: 50px;
+  height: 50px;
+}
+.post-users{
+  width: 100%;
+}
+.post-container{
+  width: 100%;
+}
 
 }
 
