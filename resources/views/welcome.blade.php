@@ -30,7 +30,7 @@
                     </a>
                 </div>
 
-                <!-- Navigation Links -->
+                {{-- <!-- Navigation Links -->
                 <div class="space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link :href="route('login')" :active="request()->routeIs('login')">
                         {{ __('Iniciar Sesión') }}
@@ -38,7 +38,7 @@
                      <x-nav-link :href="route('register')" :active="request()->routeIs('register')">
                         {{ __('Registro') }}
                     </x-nav-link>
-                </div>
+                </div> --}}
             </div>
         </div>
     </div>
@@ -57,9 +57,9 @@
             <h1 class="typing-animation">Comparte tus ideas...</h1>
             <p class="fade-in-out mb-10">Únete hoy</p>
             <div class="login-register-btns">
- <a href="{{ route('register') }}" class=" text-gray-500 bg-gradient-to-r from-gray-300 to-gray-400 hover:bg-gradient-to-l hover:from-gray-300 hover:to-gray-400 focus:ring-4 focus:outline-none focus:ring-gray-400 dark:focus:ring-gray-500 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Crear cuenta</a>           
-           <br> <p>¿Ya tienes una cuenta?</p>
-<a href="{{ route('login') }}" class=" text-gray-500 bg-gradient-to-r from-gray-300 to-gray-400 hover:bg-gradient-to-l hover:from-gray-300 hover:to-gray-400 focus:ring-4 focus:outline-none focus:ring-gray-400 dark:focus:ring-gray-500 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Iniciar Sesión</a>
+ <a href="{{ route('register') }}" class=" text-white bg-gradient-to-r from-sky-400 to-sky-600 hover:bg-gradient-to-l hover:from-sky-400 hover:to-sky-600 focus:ring-4 focus:outline-none focus:ring-sky-600 dark:focus:ring-sky-700 font-medium rounded-2xl text-sm px-5 py-2.5 text-center me-2 mb-2">Crear cuenta</a>           
+           <br> <h2>¿Ya tienes una cuenta?</h2> <br>
+<a href="{{ route('login') }}" class=" text-white bg-gradient-to-r from-slate-400 to-slate-500 hover:bg-gradient-to-l hover:from-slate-400 hover:to-slate-500 focus:ring-4 focus:outline-none focus:ring-slate-500 dark:focus:ring-slate-600 font-medium rounded-2xl text-sm px-5 py-2.5 text-center me-2 mb-2">Iniciar Sesión</a>
 
             </div>
         </div>

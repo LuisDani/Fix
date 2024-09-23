@@ -42,7 +42,7 @@ body, html {
   
 }
 .content-container p {
-  font-size: 22px;
+  font-size: 24px;
   margin-bottom: 10px;
 
 }
@@ -67,7 +67,7 @@ width: 100%; /* Take up the full width on mobile screens */
 overflow: hidden; /* Hide the text initially */
 white-space: nowrap; /* Keep the text on a single line */
 border-right: 3px solid #000; /* Add a cursor effect */
-animation: typing 4s steps(30) infinite; /* Define the animation */
+animation: typing 3s steps(30) infinite; /* Define the animation */
 }
 
 @keyframes typing {
@@ -81,7 +81,7 @@ width: 100%; /* Show the entire text */
 
 .fade-in-out {
 opacity: 0; /* Initial opacity is 0 */
-animation: fadeInOut 4s infinite; /* Define the animation */
+animation: fadeInOut 5s infinite; /* Define the animation */
 }
 
 @keyframes fadeInOut {
