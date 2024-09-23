@@ -49,7 +49,7 @@
 
         <div>
             <x-input-label for="biography" :value="__('Biografía')" />
-            <textarea id="biography" name="biography" class="mt-1 block w-full">{{ old('biography', $user->biography) }}</textarea>
+            <textarea id="biography" name="biography" class="mt-1 block w-full" style="resize: none;">{{ old('biography', $user->biography) }}</textarea>
             <x-input-error class="mt-2" :messages="$errors->get('biography')" />
         </div>
 

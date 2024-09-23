@@ -19,7 +19,7 @@
 
                     <div class="flex gap-2 w-auto">
                         @if($post->user->profile_image)
-                            <img src="{{ asset('storage/' . $post->user->profile_image) }}" alt="Profile Image" class="w-20 h-20 rounded-full object-cover">
+                            <img src="{{ asset('storage/' . $post->user->profile_image) }}" alt="Profile Image" class="w-20 h-20 rounded-full object-cover image-post">
                         @else
                             <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
                                 <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"></path>
