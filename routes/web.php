@@ -25,10 +25,10 @@ Route::middleware('auth', 'verified')->group(function () {
     Route::post('/posts', [PostController::class, 'store'])->name('posts.store');
     Route::post('/posts/{post}/like', [LikeController::class, 'like'])->name('posts.like');
     Route::post('/posts/{post}/unlike', [LikeController::class, 'unlike'])->name('posts.unlike');
-    Route::delete('/posts/{post}', [PostController::class, 'destroy'])->name('posts.destroy');
+    Route::delete('/posts/{post}', [PostController::class, 'destroy'])->name('posts.destroy');  
 
-    
 });
+
 Route::get('/auth/google', [GoogleController::class, 'redirectToGoogle'])->name('auth.google');
 Route::get('/auth/google/callback', [GoogleController::class, 'handleGoogleCallback'])->name('auth.google.callback');
 

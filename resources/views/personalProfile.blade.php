@@ -32,7 +32,7 @@
 </div>
 
 <div class="container mx-auto">
-    <div class="mt-8 flex flex-col items-center">
+    <div class="mt-8 flex flex-col items-center w-full">
         <h3 class="text-xl font-semibold mb-4">Tus publicaciones</h3>
 
         @if($posts->count())
